@@ -7,76 +7,95 @@ import interfaces.ReprodutorMusical;
 public class Iphone implements AparelhoTelefonico, NavegadorInternet, ReprodutorMusical {
 
     //atributos
-    private string modelo;
-    private string cor;
-    private integer memoriaRam;
-    private integer armazenamento;
+    private String modelo;
+    private String cor;
+    private int memoria;
 
-    public Iphone(string modelo, string cor, integer memoriaRam, integer armazenamento) {
+    public Iphone(String modelo, String cor, int memoria) {
         this.modelo = modelo;
         this.cor = cor;
-        this.memoriaRam = memoriaRam;
-        this.armazenamento = armazenamento;
+        this.memoria = memoria;
     }
 
-    public string getModelo() {
+    public String getModelo() {
         return modelo;
     }
 
-    public string getCor() {
+    public String getCor() {
         return cor;
     }
 
-    public integer getMemoriaRam() {
-        return memoriaRam;
+    public int memoria() {
+        return memoria;
     }
 
-    public integer getArmazenamento() {
-        return armazenamento;
-    }
 
+
+    //implementação do Aparelho telefonico
     @java.lang.Override
     public void ligar(String numero) {
+        System.out.println("Ligando para o número " + numero);
 
     }
 
     @java.lang.Override
     public void atender() {
+        System.out.println("Atendendo...");
 
     }
 
     @java.lang.Override
     public void iniciarCorreioVoz() {
+        System.out.println("Correio de voz..");
 
     }
 
+    //implementação do Navegador de Internet
+
     @java.lang.Override
     public void exibirPagina(String url) {
+        System.out.println("Exibindo pagina de url = " +url);
 
     }
 
     @java.lang.Override
     public void adicionarNovaAba() {
+        System.out.println("Nova Aba!");
 
     }
 
     @java.lang.Override
     public void atualizarPagina() {
+        System.out.println("Atualizando pagina");
+
+    }
+
+    //implementação do Reprodutor Musical
+
+    @java.lang.Override
+    public void selecionarMusica(String musica) {
+        System.out.println("Selecionando a musica " + musica);
 
     }
 
     @java.lang.Override
     public void tocar() {
+        System.out.println("Tocando....");
 
     }
 
     @java.lang.Override
     public void pausar() {
+        System.out.println("Pausando a música...");
 
     }
 
-    @java.lang.Override
-    public void selecionarMusica(String musica) {
-
+    @Override
+    public String toString() {
+        return "Iphone{" +
+                "modelo='" + modelo + '\'' +
+                ", cor='" + cor + '\'' +
+                ", memoria=" + memoria +
+                '}';
     }
 }
